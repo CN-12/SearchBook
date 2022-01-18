@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        while(1) {
+            serach(inputbook());
+        }
+        function inputbook() {
+            var input = prompt('입력하시면 알라딘 예스24 교보문고에 찾을 수 있어요', '책 제목을 입력해주세요');
+            return input;
+        }
+        function serach(bok) {
+            if(bok == 0 || bok == null) {
+                return 0;
+            }
+            const book = bok;
+            const aladin = "https://www.aladin.co.kr/search/wsearchresult.aspx?KeyTag=D10&SearchTarget=UsedStore&SearchWord=" + book + "&x=0&y=0";
+            const yes24 = "http://www.yes24.com/Product/Search?domain=ALL&query=" + book
+            const kyobo = "https://search.kyobobook.co.kr/web/search?vPstrKeyWord=" + book + "&searchPcondition=1&collName=BLOG_REVIEW&vPstrTab=BLOG_REVIEW&from_coll=BLOG_REVIEW&currentPage=1&orderClick=LIB";
+            console.log(aladin, yes24, kyobo);
+            window.open(yes24, "_blank");
+            window.open(aladin, "_blank");
+            window.open(kyobo, "_blank");
+        }
+    </script>
+</body>
+</html>
